@@ -11,9 +11,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        app\User::create([
-            'first_name' => 'Jorge I.',
-            'last_name'  => 'Meza',
+        Schema::disableForeignKeyConstraints();
+        // DB::table('users')->truncate();
+        App\User::truncate();
+        Schema::enableForeignKeyConstraints();
+
+        App\User::create([
+            'name' => 'Jorge I. Meza',
             'email'      => 'jimezam@autonoma.edu.co',
             'password'   => Hash::make('hola123'),
         ]);
