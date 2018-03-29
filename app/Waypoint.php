@@ -12,7 +12,7 @@ class Waypoint extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'latitude', 'longitude', 'category_id', 
+        'name', 'description', 'address', 'latitude', 'longitude', 'category_id', 
     ];
 
     /*

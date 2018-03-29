@@ -18,6 +18,7 @@ class CreateWaypointsTable extends Migration
             $table->string('slug', 5)->unique();
             $table->string('name', 60);
             $table->text('description')->nullable();
+            $table->string('address', 100)->nullable();
             $table->float('latitude', 8, 5)->nullable();
             $table->float('longitude', 9, 5)->nullable();
             $table->unsignedInteger('category_id');
