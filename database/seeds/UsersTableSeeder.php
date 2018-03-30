@@ -17,9 +17,16 @@ class UsersTableSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
 
         App\User::create([
-            'name' => 'Jorge I. Meza',
-            'email'      => 'jimezam@autonoma.edu.co',
-            'password'   => Hash::make('hola123'),
+            'name'     => 'Jorge I. Meza',
+            'email'    => 'jimezam@autonoma.edu.co',
+            'type'     => 'admin',
+            'password' => Hash::make('hola123'),
+        ]);
+
+        App\User::create([
+            'name'     => 'Usuario Demo',
+            'email'    => 'demo@demo.com',
+            'password' => Hash::make('hola123'),
         ]);
     }
 }

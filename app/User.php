@@ -9,6 +9,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // protected $table = 'users';
+    // public $timestamps = true;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,4 +29,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isAdmin()
+    {
+        return ($this->type == 'admin');
+    }
+
+    public function isRegular()
+    {
+        return ($this->type == 'regular');
+    }
 }
