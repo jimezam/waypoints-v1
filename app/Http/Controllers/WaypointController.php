@@ -17,7 +17,7 @@ class WaypointController extends Controller
     public function index()
     {
         // $waypoints = DB::table('waypoints')->get();
-        $items = Waypoint::all();
+        $items = Waypoint::paginate(10);
 
         $title = 'List of important waypoints';
 

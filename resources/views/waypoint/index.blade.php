@@ -32,7 +32,7 @@
                         <th scope="row">{{ $item->id }}</th>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->address }}</td>
-                        <td>{{ $item->category_id }}</td>
+                        <td>{{ $item->category->name }}</td>
                         <td>
                             <form action="{{ route('waypoint.destroy', $item) }}" method="POST">
                                 {{ csrf_field() }}
@@ -48,6 +48,8 @@
                     @endforeach
                     </tbody>
                 </table>
+
+                {{ $items->links() }}
             </div>
             @else
                 <p>No hay elementos registrados.</p>
