@@ -79,7 +79,9 @@ class WaypointController extends Controller
      */
     public function edit(Waypoint $waypoint)
     {
-        //
+        $categories = Category::orderBy('name', 'asc')->pluck('name', 'id');
+
+        return view('waypoint.edit', compact('waypoint', 'categories'));
     }
 
     /**
@@ -89,9 +91,15 @@ class WaypointController extends Controller
      * @param  \App\Waypoint  $waypoint
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Waypoint $waypoint)
+    public function update(WaypointCreateRequest $request, Waypoint $waypoint)
     {
-        //
+        $input = $request->validated();
+
+        $waypoint->update($input);
+
+        return redirect()->
+            route('waypoint.index')->
+            with('message', 'Waypoint successfully updated!');
     }
 
     /**

@@ -34,7 +34,7 @@
                         <td>{{ $item->address }}</td>
                         <td>{{ $item->category->name }}</td>
                         <td>
-                            <form action="{{ route('waypoint.destroy', $item) }}" method="POST"
+                            <form action="{{ route('waypoint.destroy', $item) }}" method="post"
                                   onsubmit="return confirm('Do you really want to delete this element?');">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}

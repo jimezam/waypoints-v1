@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="offset-md-1 col-md-10">
-            <h1 class="pb-1">Add a new waypoint</h1>
+            <h1 class="pb-1">Edit waypoint: {{ $waypoint->name }}</h1>
         </div>
     </div>
 
@@ -22,7 +22,9 @@
                 </div>
             @endif
 
-            {{ Form::open(['route' => 'waypoint.store', 'method' => 'post']) }}
+            {{ Form::model($waypoint, ['route' => ['waypoint.update', $waypoint], 'method' => 'post']) }}
+                @method('PUT')
+<!-- -->
                 <div class="form-group">
                     {{ Form::label('name', 'Name') }}
                     {{ Form::text('name', null, 
@@ -61,9 +63,9 @@
                     {{ Form::textarea('description', null, 
                                       ['class' => 'form-control', 'rows' => '5']) }}
                 </div>
-                
+<!-- -->                
                 <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-plus form-control-feedback"></i> Create
+                        <i class="fa fa-pencil form-control-feedback"></i> Edit
                 </button>
                 <a href="{{ route('waypoint.index') }}" class="btn btn-secondary">Cancel</a>
             {!! Form::close() !!}
