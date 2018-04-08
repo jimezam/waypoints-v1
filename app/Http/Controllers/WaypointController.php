@@ -14,7 +14,16 @@ class WaypointController extends Controller
      */
     public function index()
     {
-        //
+        // $waypoints = DB::table('waypoints')->get();
+        $items = Waypoint::all();
+
+        $title = 'List of important waypoints';
+
+        //        return view('waypoint.index')
+        //            ->with('items', $items)
+        //            ->with('title', $title);
+        
+        return view('waypoint.index', compact('title', 'items'));
     }
 
     /**

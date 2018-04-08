@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Waypoint extends Model
 {
+    // protected $table = 'waypoints';
+    // public $timestamps = true;
+
     /**
      * The attributes that are mass assignable.
      *
