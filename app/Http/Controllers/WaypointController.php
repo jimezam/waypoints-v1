@@ -66,7 +66,9 @@ class WaypointController extends Controller
      */
     public function show(Waypoint $waypoint)
     {
-        return view('waypoint.show', compact('waypoint'));
+        $qrData = ['waypoint' => $waypoint->slug];
+
+        return view('waypoint.show', compact('waypoint', 'qrData'));
     }
 
     /**

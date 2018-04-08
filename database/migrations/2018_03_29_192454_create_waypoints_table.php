@@ -15,7 +15,7 @@ class CreateWaypointsTable extends Migration
     {
         Schema::create('waypoints', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug', 5)->unique();
+            $table->string('slug', 6)->unique();
             $table->string('name', 60);
             $table->text('description')->nullable();
             $table->string('address', 100)->nullable();

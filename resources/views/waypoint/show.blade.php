@@ -61,7 +61,13 @@
         </div>
 
         <div class="col-md-5 offset-md-1">
-            xxxx
+            {!! '<img src="data:image/png;base64,' . 
+                    DNS2D::getBarcodePNG(json_encode($qrData), "QRCODE", 10, 10, array(0, 0, 0)) . 
+                '" alt="barcode" />' !!}
+
+            <!--
+            {!! json_encode($qrData) !!}
+            -->                
         </div>
     </div>
 @endsection

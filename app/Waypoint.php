@@ -30,7 +30,7 @@ class Waypoint extends Model
         if(!isset($this->attributes['slug']) || 
            $this->attributes['slug'] == null)
         {
-            $this->attributes['slug'] = str_random(5);
+            $this->attributes['slug'] = str_random(6);
         }
 
         /*
