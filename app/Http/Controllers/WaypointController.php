@@ -17,7 +17,7 @@ class WaypointController extends Controller
     public function index()
     {
         // $waypoints = DB::table('waypoints')->get();
-        $items = Waypoint::paginate(10);
+        $items = Waypoint::latest()->paginate(10);
 
         $title = 'List of important waypoints';
 
@@ -66,7 +66,7 @@ class WaypointController extends Controller
      */
     public function show(Waypoint $waypoint)
     {
-        //
+        return view('waypoint.show', compact('waypoint'));
     }
 
     /**
