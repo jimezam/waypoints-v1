@@ -13,3 +13,10 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+/*************************************************************************/
+
+// Instalation of Font Awesome: https://fontawesome.com/
+mix.copy('vendor/fortawesome/font-awesome/css/font-awesome.min.css', 'public/css');
+mix.copy('vendor/fortawesome/font-awesome/fonts/*', 'public/fonts');
+// Don't forget to run: "npm run dev"
