@@ -48,16 +48,6 @@ class WaypointController extends Controller
      */
     public function store(WaypointCreateRequest $request)
     {
-        /*
-        $data = request()->validate([
-            'name' => 'required',
-            'email' => ['required', 'email', 'unique:users,email'],
-            'password' => 'required',
-        ], [
-            'name.required' => 'El campo nombre es obligatorio'
-        ]);
-        */
-
         // $input = $request->all();
         $input = $request->validated();
 
@@ -110,6 +100,10 @@ class WaypointController extends Controller
      */
     public function destroy(Waypoint $waypoint)
     {
-        //
+        $waypoint->delete();
+
+        return redirect()->
+            route('waypoint.index')->
+            with('message', 'Waypoint successfully removed!');
     }
 }

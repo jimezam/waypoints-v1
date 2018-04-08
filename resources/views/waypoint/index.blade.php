@@ -5,7 +5,7 @@
     <div class="row">
         <div class="offset-md-1 col-md-10">
             <h1 class="pb-1">List of important waypoints</h1>
-            <p><a href="{{ route('waypoint.create') }}" class="btn btn-primary">
+            <p><a href="{{ route('waypoint.create') }}" class="btn btn-primary" title="Add">
                 <i class="fa fa-plus form-control-feedback"></i>
                 <span class="glyphicons glyphicons-plus"></span> Add waypoint
             </a></p>
@@ -34,12 +34,17 @@
                         <td>{{ $item->address }}</td>
                         <td>{{ $item->category->name }}</td>
                         <td>
-                            <form action="{{ route('waypoint.destroy', $item) }}" method="POST">
+                            <form action="{{ route('waypoint.destroy', $item) }}" method="POST"
+                                  onsubmit="return confirm('Do you really want to delete this element?');">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <a href="{{ route('waypoint.show', $item) }}" class="btn btn-info"><span class="fa fa-eye"></span></a>
-                                <a href="{{ route('waypoint.edit', $item) }}" class="btn btn-warning"><span class="fa fa-pencil"></span></a>
-                                <button type="submit" class="btn btn-danger">
+                                <a href="{{ route('waypoint.show', $item) }}" class="btn btn-info" title="View">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                                <a href="{{ route('waypoint.edit', $item) }}" class="btn btn-warning" title="Edit">
+                                    <span class="fa fa-pencil"></span>
+                                </a>
+                                <button type="submit" class="btn btn-danger" title="Remove">
                                     <i class="fa fa-trash form-control-feedback"></i>
                                 </button>
                             </form>
