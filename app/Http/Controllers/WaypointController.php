@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Waypoint;
+use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\WaypointCreateRequest;
 
 class WaypointController extends Controller
 {
@@ -33,7 +35,9 @@ class WaypointController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::orderBy('name', 'asc')->pluck('name', 'id');
+
+        return view('waypoint.create', compact('categories'));
     }
 
     /**
@@ -42,9 +46,26 @@ class WaypointController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(WaypointCreateRequest $request)
     {
-        //
+        /*
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => ['required', 'email', 'unique:users,email'],
+            'password' => 'required',
+        ], [
+            'name.required' => 'El campo nombre es obligatorio'
+        ]);
+        */
+
+        // $input = $request->all();
+        $input = $request->validated();
+
+        Waypoint::create($input);
+        
+        return redirect()->
+            route('waypoint.index')->
+            with('message', 'Waypoint successfully added!');
     }
 
     /**

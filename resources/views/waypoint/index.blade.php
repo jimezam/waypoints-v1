@@ -2,11 +2,9 @@
 
 @section('content')
 
-    <!-- d-flex justify-content-between align-items-end mb-3 -->
-
     <div class="row">
         <div class="offset-md-1 col-md-10">
-            <h1 class="pb-1">{{ $title }}</h1>
+            <h1 class="pb-1">List of important waypoints</h1>
             <p><a href="{{ route('waypoint.create') }}" class="btn btn-primary">
                 <i class="fa fa-plus form-control-feedback"></i>
                 <span class="glyphicons glyphicons-plus"></span> Add waypoint
