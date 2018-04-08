@@ -42,4 +42,12 @@ class Waypoint extends Model
     
         return parent::fill($attributes);
     }
+
+    /**
+     * Get the category that belongs the waypoint.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }

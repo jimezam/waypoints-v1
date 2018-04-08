@@ -17,4 +17,12 @@ class Category extends Model
     protected $fillable = [
         'name',
     ];
+ 
+    /**
+     * Get the waypoints for the category.
+     */
+    public function waypoints()
+    {
+        return $this->hasMany('App\Waypoint');
+    }
 }
