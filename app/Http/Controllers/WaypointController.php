@@ -55,7 +55,7 @@ class WaypointController extends Controller
         
         return redirect()->
             route('waypoint.index')->
-            with('message', 'Waypoint successfully added!');
+            with('success', 'Waypoint successfully added!');
     }
 
     /**
@@ -99,7 +99,7 @@ class WaypointController extends Controller
 
         return redirect()->
             route('waypoint.index')->
-            with('message', 'Waypoint successfully updated!');
+            with('success', 'Waypoint successfully updated!');
     }
 
     /**
@@ -114,6 +114,6 @@ class WaypointController extends Controller
 
         return redirect()->
             route('waypoint.index')->
-            with('message', 'Waypoint successfully removed!');
+            with('success', 'Waypoint successfully removed!');
     }
 }
