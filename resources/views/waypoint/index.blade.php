@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="offset-md-1 col-md-10">
+        <div class="col-md-12">
             <h1 class="pb-1">List of important waypoints</h1>
             <p><a href="{{ route('waypoint.create') }}" class="btn btn-primary" title="Add">
                 <i class="fa fa-plus form-control-feedback"></i>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="row">
-        <div class="offset-md-1 col-md-10">
+        <div class="col-md-12">
             @if ($items->isNotEmpty())
             <div class="table-responsive-md">
                 <table class="table table-striped">

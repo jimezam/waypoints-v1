@@ -47,6 +47,17 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Waypoints <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('waypoint.index') }}">{{ __('List') }}</a>
+                                    <a class="dropdown-item" href="{{ route('waypoint.create') }}">{{ __('Add') }}</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -69,20 +80,23 @@
         </nav>
 
         <main class="py-4">
-            <!-- Success message -->
-            @if ($message = Session::get('success'))
-                <div class="row">
-                    <div class="offset-md-1 col-md-10 alert alert-success alert-dismissible fade show" role="alert">
-                        <p>{{ $message }}</p>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            @endif
-            <!-- /Success message -->
 
-            @yield('content')
+            <div class="container">
+                <!-- Success message -->
+                @if ($message = Session::get('success'))
+                    <div class="row">
+                        <div class="col-md-12 alert alert-success alert-dismissible fade show" role="alert">
+                            {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                @endif
+                <!-- /Success message -->      
+
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>

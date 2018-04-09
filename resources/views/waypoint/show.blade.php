@@ -3,13 +3,13 @@
 @section('content')
 
     <div class="row">
-        <div class="offset-md-1 col-md-10">
-            <h1 class="pb-1">Waypoint: {{ $waypoint->name }}</h1>
+        <div class="col-md-12">
+            <h1 class="pb-1">Waypoint: <span class="text-primary">{{ $waypoint->name }}</span></h1>
         </div>
     </div>
 
     <div class="row">
-        <div class="offset-md-1 col-md-5">
+        <div class="col-md-6">
 
             <table class="table">
                 <tbody>
@@ -73,10 +73,13 @@
 
         </div>
 
-        <div class="col-md-5 offset-md-1">
+        <div class="col-md-6">
+
+            <div class="visible-sm-block"><div class="pt-4"></div></div>
+
             {!! '<img src="data:image/png;base64,' . 
                     DNS2D::getBarcodePNG(json_encode($qrData), "QRCODE", 10, 10, array(0, 0, 0)) . 
-                '" alt="barcode" />' !!}
+                '" alt="QR Code" title=""QR Code />' !!}
 
             <!--
             {!! json_encode($qrData) !!}
