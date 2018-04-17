@@ -52,7 +52,18 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('waypoint.index') }}">{{ __('List') }}</a>
-                                    <a class="dropdown-item" href="{{ route('waypoint.create') }}">{{ __('Add') }}</a>
+                                    <a class="dropdown-item" href="{{ route('waypoint.create') }}">{{ __('Create') }}</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Categories <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('category.index') }}">{{ __('List') }}</a>
+                                    <a class="dropdown-item" href="{{ route('category.create') }}">{{ __('Create') }}</a>
                                 </div>
                             </li>
 
