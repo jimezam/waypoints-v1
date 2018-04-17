@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1 class="pb-1">Add a new waypoint</h1>
+            <h1 class="pb-1">Create a new waypoint</h1>
         </div>
     </div>
 

@@ -61,10 +61,10 @@
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <a href="{{ route('waypoint.edit', $waypoint) }}" class="btn btn-warning" title="Edit">
-                    <span class="fa fa-pencil"></span>
+                    <span class="fa fa-pencil"></span> Edit
                 </a>
                 <button type="submit" class="btn btn-danger" title="Remove">
-                        <i class="fa fa-trash form-control-feedback"></i>
+                        <i class="fa fa-trash form-control-feedback"></i> Remove
                 </button>
                 <a href="{{ URL::previous() }}" class="btn btn-secondary" title="Back">
                     Back

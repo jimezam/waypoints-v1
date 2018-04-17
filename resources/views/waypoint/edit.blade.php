@@ -28,7 +28,7 @@
 
                 @include('waypoint.subview_form')
 
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-warning">
                         <i class="fa fa-pencil form-control-feedback"></i> Edit
                 </button>
                 <a href="{{ route('waypoint.index') }}" class="btn btn-secondary">Cancel</a>

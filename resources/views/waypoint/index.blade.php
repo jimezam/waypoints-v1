@@ -7,7 +7,7 @@
             <h1 class="pb-1">List of important waypoints</h1>
             <p><a href="{{ route('waypoint.create') }}" class="btn btn-primary" title="Add">
                 <i class="fa fa-plus form-control-feedback"></i>
-                <span class="glyphicons glyphicons-plus"></span> Add waypoint
+                <span class="glyphicons glyphicons-plus"></span> Create waypoint
             </a></p>
         </div>
     </div>
