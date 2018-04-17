@@ -16,6 +16,8 @@ class WaypointsTableSeeder extends Seeder
         App\Waypoint::truncate();
         Schema::enableForeignKeyConstraints();
 
+        // $category_id = Category::where('name', 'xxx')->value('id');
+
         factory(App\Waypoint::class, 10)->create();
     }
 }
